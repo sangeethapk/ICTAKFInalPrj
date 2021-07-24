@@ -1,0 +1,203 @@
+
+
+<div class="mx-5 bg-grey-400">
+    <!--Screen-->
+    <div class="mx-5"></div>
+    <div class="min-h-screen flex flex-col mx-5">
+       
+       
+     
+        <div class="flex flex-1 my-5">
+            <!--Sidebar-->
+            <aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav md:block lg:block">
+  
+                <ul class="list-reset flex flex-col">
+                    <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                        <a href="index.html"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-tachometer-alt float-left mx-2"></i>
+                            Dashboard
+                            <span><i class="fas fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                                     
+                    <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="tables.html"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-table float-left mx-2"></i>
+                            All Tables
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a routerLink="addcourse"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-table float-left mx-2"></i>
+                            Add Course
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <!-- <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                         <div class="dropup">
+                            
+                            <button class="dropbtn">Add Course</button>
+                            <div class="dropup-content">
+                              
+                              <a href="add-course">Instutional</a>
+                              <a href="add-course">Corporate</a>
+                              <a routerLink="addcourse">Retail</a>
+                            </div>
+                        
+                        </div>
+                          </li> -->
+                        </ul>
+                        
+                        </aside>
+                        </div>
+                    <!--Main-->
+            <main class="bg-white-300 flex-1 p-3 overflow-hidden">
+  
+                <div class="flex flex-col">
+                    <!-- Stats Row Starts Here -->
+                    <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+                        <div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="#" class="no-underline text-white text-2xl">
+                                    {{data.length}}
+                                </a>
+                                <a href="#" class="no-underline text-white text-lg">
+                                    Total Retail Course Registration
+                                </a>
+                            </div>
+                        </div>
+  
+                        <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="#" class="no-underline text-white text-2xl">
+                                    {{0}}
+                                </a>
+                                <a href="#" class="no-underline text-white text-lg">
+                                  Total Institutioal Course Registration
+                                </a>
+                            </div>
+                        </div>
+  
+                        <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="#" class="no-underline text-white text-2xl">
+                                    {{0}}
+                                </a>
+                                <a href="#" class="no-underline text-white text-lg">
+                                  Total Corporate Course Registration
+                                </a>
+                            </div>
+                        </div>
+  
+                        <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="#" class="no-underline text-white text-2xl">
+                                    {{0}}
+                                </a>
+                                <a href="#" class="no-underline text-white text-lg">
+                                    Total Membership and Partnership Request
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+  
+                    <!-- /Stats Row Ends Here -->
+  
+                    <!-- Card Sextion Starts Here -->
+                    <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+  
+                        <!-- card -->
+  
+                        <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
+                            <div class="px-6 py-2 border-b border-light-grey">
+                                <div class="font-bold text-xl">Retail Brochure Requests</div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table text-grey-darkest" id='excel-table'>
+                                    <thead class="bg-grey-dark text-white text-normal">
+                                       <tr >
+                                          <th scope="col">#</th>
+                                          <th scope="col">Date of Submition</th>
+                                          <th scope="col">Name</th>
+                                          <th scope="col">Email</th>
+                                          <th scope="col">Phone</th>
+                                          <th scope="col">Highest Qualification</th>
+                                          <th scope="col">Are you Employed?</th>
+                                          <th scope="col">Message</th>
+                                          
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr *ngFor="let info of data;let ndx = index">
+                                          <td>{{ndx+1}}</td>
+                                          <td>{{info.submittedDate|date:'short'}}</td>
+                                          <td>{{info.name}}</td>
+                                          <td>{{info.email}}</td>
+                                          <td>{{info.phone}}</td>
+                                          <td>{{info.highest_qualification}}</td>
+                                          <td>{{info.employed}}</td>
+                                          <td>{{info.messsage}}</td>
+                                         
+                                        </tr>
+                                      
+                                      <tr> <td colspan="3"><button class="btn btn-primary" style="font-weight: bold;color: darkgoldenrod;" (click)=exportToExcel()>Download Excel</button></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /card -->
+  
+                    </div>
+                    <!-- /Cards Section Ends Here -->
+  
+                    <!-- Progress Bar -->
+                    <!-- <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 mt-2">
+                        <div class="rounded overflow-hidden shadow bg-white mx-2 w-full pt-2">
+                            <div class="px-6 py-2 border-b border-light-grey">
+                                <div class="font-bold text-xl">Progress Among Projects</div>
+                            </div>
+                            <div class="">
+                                <div class="w-full">
+  
+                                    <div class="shadow w-full bg-grey-light">
+                                        <div class="bg-blue-500 text-xs leading-none py-1 text-center text-white"
+                                             style="width: 45%">45%
+                                        </div>
+                                    </div>
+  
+  
+                                    <div class="shadow w-full bg-grey-light mt-2">
+                                        <div class="bg-teal-500 text-xs leading-none py-1 text-center text-white"
+                                             style="width: 55%">55%
+                                        </div>
+                                    </div>
+  
+  
+                                    <div class="shadow w-full bg-grey-light mt-2">
+                                        <div class="bg-orange-500 text-xs leading-none py-1 text-center text-white"
+                                             style="width: 65%">65%
+                                        </div>
+                                    </div>
+  
+  
+                                    <div class="shadow w-full bg-grey-300 mt-2">
+                                        <div class="bg-red-800 text-xs leading-none py-1 text-center text-white"
+                                             style="width: 75%">75%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                   
+                    <!--/Profile Tabs-->
+                </div>
+            </main>
+            <!--/Main-->
+            </div>
+            </div>
+       

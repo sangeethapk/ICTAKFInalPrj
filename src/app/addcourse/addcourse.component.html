@@ -1,0 +1,153 @@
+<!-- NEw Form -->
+
+
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100 w-90">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add Course</h3>
+            <form  method="POST" #addcourseform='ngForm' (ngSubmit)='addCourse()' enctype="multipart/form-data" >
+              <div class="form-group">
+                <label for="title">Name</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)] ="course.name" required>
+                          
+               </div>
+               <div>
+                <label for="title">Category</label>
+                <select class="form-select" aria-label="Default select example" id="category" name="category" [(ngModel)] ="course.category" required>
+                    <option value="Retail">Retail</option>
+                    <option value="Instituional">Instituional</option>
+                    <option value="Corporate">Corporate</option>
+                  </select>
+                          
+               </div>
+               <div class="form-group">
+                <label for="about">About the Program</label>
+                <textarea class="form-control" id="about" name="about"  [(ngModel)] ="course.about" required></textarea>
+                          
+               </div>
+                <div class="form-group">
+                <label for="objective">Objective</label>
+                <textarea class="form-control" id="objective" name="objective"  [(ngModel)] ="course.objective" required></textarea>
+                          
+               </div>
+               <div class="form-group">
+                <label for="sponserimage">Course Sponsered by</label>
+                <input type="text" class="form-control" id="sponserimage" name="sponserimage"  [(ngModel)] ="course.sponserimage" required>
+                <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="sponserimage" name="sponserimage" [(ngModel)] ="course.sponserimage"></ejs-richtexteditor>         -->
+               </div>
+               <div class="form-group">
+                <label for="knowledgePartnerimage">Knowledge Partner</label>
+                <input type="text" class="form-control" id="knowledgePartnerimage" name="knowledgeParterimage"  [(ngModel)] ="course.knowledgeParterimage" required>
+                          
+               </div>
+               <div class="form-group">
+                <label for="internshipPartnerimage">Internship Partner</label>
+                <input type="text" class="form-control" id="internshipPartnerimage" name="internshipPartnerimage"  [(ngModel)] ="course.internshipPartnerimage" required>
+                          
+               </div>
+               <div class="form-group">
+                <label for="courseDelivery">Course Delivery</label>
+                <input type="text" class="form-control" id="courseDelivery" name="courseDelivery" [(ngModel)] ="course.courseDelivery" required>
+                          
+               </div>
+               <div class="form-group">
+                <label for="agenda">Agenda</label>
+                <textarea class="form-control" id="agenda" name="agenda" [(ngModel)] ="course.agenda" required></textarea>
+                          
+               </div>
+               <!-- <div class="form-group">
+                <label for="hidhlights">Course Highlights</label>
+                <input type="text" class="form-control" id="highlights" name="highlights" [(ngModel)] ="course.highlights" required>
+                          
+               </div> -->
+               <div class="form-group">
+                <label for="hidhlights" class="my-2">Course Highlights</label>
+                <!-- <input type="text" class="form-control" id="highlights" name="highlights" [(ngModel)] ="course.highlights" required> -->
+                <ejs-richtexteditor [toolbarSettings]='tools'  required id="highlights" name="highlights" [(ngModel)] ="course.highlights"></ejs-richtexteditor>         
+               </div>
+    
+               <div class="form-group">
+                <label for="eligibility" class="my-2">Eligibility</label>
+                <!-- <input type="text" class="form-control" id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility" required> -->
+                <ejs-richtexteditor  [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>         
+               </div>
+    
+    
+               <div class="form-group">
+                <label for="age" class="my-2">Age</label>
+                 <input type="text" class="form-control" id="age" name="age" [(ngModel)] ="course.age" required>
+                <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>          -->
+               </div>
+               
+               <div class="form-group">
+                <label for="title" class="my-2">Entrance Test Details</label>
+                <!-- <input type="text" class="form-control" id="test" name="test" [(ngModel)] ="course.test" required> -->
+                <ejs-richtexteditor [toolbarSettings]='tools'  required id="test" name="test" [(ngModel)] ="course.test"></ejs-richtexteditor>      
+               </div>
+              
+               <div class="form-group">
+                <label for="title" class="my-2">Course Fee</label>
+                <!-- <input type="text" class="form-control" id="courseFee" name="courseFee" [(ngModel)] ="course.courseFee" required> -->
+                <ejs-richtexteditor [toolbarSettings]='tools'  required id="courseFee" name="courseFee" [(ngModel)] ="course.courseFee"></ejs-richtexteditor>         
+               </div>
+               <div class="form-group">
+                <!-- <label for="refundPolicy">Refund Policy</label>
+                <input type="text" class="form-control" id="refundPolicy" name="refundPolicy" [(ngModel)] ="course.refundPolicy" required> -->
+                <label for="refundPolicy" class="my-2">Refund Policy</label>
+                <ejs-richtexteditor [toolbarSettings]='tools'  required id="refundPolicy" name="refundPolicy" [(ngModel)] ="course.refundPolicy"></ejs-richtexteditor>
+    
+               </div>
+               <div class="form-group">
+                <label for="importantDates">Important Dates</label>
+                <!-- <input type="text" class="form-control" id="importantDates" name="importantDates" [(ngModel)] ="course.importantDates" required> -->
+                <ejs-richtexteditor [toolbarSettings]='tools'  required id="importantDates" name="importantDates" [(ngModel)] ="course.importantDates"></ejs-richtexteditor>        
+               </div>
+              
+               <div class="form-group">
+                <label for="title">Image 1</label>
+                <input type="text" class="form-control" id="img1" name="img1" [(ngModel)] ="course.img1" required>
+                          
+               </div>
+               <div class="form-group">
+                <label for="img2">Image 2</label>
+                <input type="text" class="form-control" id="img2" name="img2" [(ngModel)] ="course.img2" required>
+                          
+               </div>
+              <div class="form-group">
+                
+                <label for="questionPaperLink">Sample Question Paper Link</label>
+                <input type="text" class="form-control" id="questionPaperLink" name="questionPaperLink" [(ngModel)] ="course.questionPaperLink" required>
+              </div>
+              <div class="form-group">
+                <label for="status">Status</label>
+                
+                <select class="form-select" aria-label="Default select example" id="status" name="status" [(ngModel)] ="course.status" required>
+                    <option value="Registration Open">Restration Open</option>
+                    <option value="Coming Soon">Coming Soon</option>
+                    <option value="Closed">Closed</option>
+                  </select>
+              </div> 
+    
+              <div class="form-group">
+                <label for="brochureTitle" class="my-2">BrochureTitle</label>
+                 <input type="text" class="form-control" id="brochureTitle" name="brochureTitle" [(ngModel)] ="course.brochureTitle" required> 
+               
+               </div>
+              
+              <button type="submit" [disabled]='addcourseform.form.invalid' class="btn btn btn-primary m-2">
+                Add
+              </button>
+ 
+               
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- --------------------- -->
